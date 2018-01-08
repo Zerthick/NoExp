@@ -128,7 +128,7 @@ public class NoExp {
                 Entity entity = (Entity) causeRoot;
                 if (entity.getType().equals(EntityTypes.THROWN_EXP_BOTTLE)) { // ExpBottle
                     if(!expBottle) {
-                        filterSpawnEevent(event);
+                        filterSpawnEvent(event);
                     }
                 } else if (entity.getType().equals(EntityTypes.PLAYER)) {
                     EventContext eventContext = event.getContext();
@@ -140,14 +140,14 @@ public class NoExp {
 
                                 if(itemStackSnapshot.getType().equals(ItemTypes.FISHING_ROD)) {
                                     if(!fishing) {
-                                        filterSpawnEevent(event);
+                                        filterSpawnEvent(event);
                                     }
                                 }
 
                             });
                         } else if (spawnType.equals(SpawnTypes.DROPPED_ITEM)) { // Mining
                             if(!mining) {
-                                filterSpawnEevent(event);
+                                filterSpawnEvent(event);
                             }
                         }
 
@@ -158,7 +158,7 @@ public class NoExp {
                     boolean entityFlag = entityMap.getOrDefault(entity.getType().getId(), true);
 
                     if(!entityFlag) { // Entities Death % Breeding
-                        filterSpawnEevent(event);
+                        filterSpawnEvent(event);
                     }
 
                 }
@@ -167,7 +167,7 @@ public class NoExp {
 
                 if(inventory.getArchetype().equals(InventoryArchetypes.FURNACE)) {
                     if(!smelting) {
-                        filterSpawnEevent(event);
+                        filterSpawnEvent(event);
                     }
                 }
             }
@@ -183,7 +183,7 @@ public class NoExp {
         return instance;
     }
 
-    private void filterSpawnEevent(SpawnEntityEvent event) {
+    private void filterSpawnEvent(SpawnEntityEvent event) {
         event.filterEntities(e -> !e.getType().equals(EntityTypes.EXPERIENCE_ORB));
     }
 
