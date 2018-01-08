@@ -4,8 +4,7 @@
 The idea behind NoExp is simple, in vanilla Minecraft, players can gain experience points through a variety of actions such as killing mobs, fishing, or mining ores.  The aim of NoExp is to restrict which of these actions produce experience. It does this through the use of a simple config file located at `~/mods/config/NoExp.conf`.  The default config is shown below:
 
 ```
-# Entites within this map will be monitored by NoExp 
-# If their id is set to false then they won't drop exp orbs when bred or killed
+# Entites within this map will be monitored by NoExp If their id is set to false then they won't drop exp orbs when bred or killed
 entityMap {
     "minecraft:bat"=true
     "minecraft:blaze"=true
@@ -42,13 +41,13 @@ entityMap {
     "minecraft:slime"=true
     "minecraft:snowman"=true
     "minecraft:spider"=true
-    "minecraft:squid "=true
+    "minecraft:squid"=true
     "minecraft:stray"=true
-    "minecraft:vex "=true
+    "minecraft:vex"=true
     "minecraft:villager"=true
     "minecraft:villager_golem"=true
     "minecraft:vindication_illager"=true
-    "minecraft:witch "=true
+    "minecraft:witch"=true
     "minecraft:wither"=true
     "minecraft:wither_skeleton"=true
     "minecraft:wolf"=true
