@@ -27,6 +27,7 @@ import ninja.leaping.configurate.loader.ConfigurationLoader;
 import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 import org.slf4j.Logger;
 import org.spongepowered.api.asset.Asset;
+import org.spongepowered.api.block.BlockSnapshot;
 import org.spongepowered.api.config.DefaultConfig;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.EntityTypes;
@@ -124,7 +125,7 @@ public class NoExp {
 
             Object causeRoot = event.getCause().root();
 
-            if (causeRoot instanceof Entity) { // ExpBottle, Fishing, Mining
+            if (causeRoot instanceof Entity) { // ExpBottle, Fishing
                 Entity entity = (Entity) causeRoot;
                 if (entity.getType().equals(EntityTypes.THROWN_EXP_BOTTLE)) { // ExpBottle
                     if(!expBottle) {
@@ -145,12 +146,7 @@ public class NoExp {
                                 }
 
                             });
-                        } else if (spawnType.equals(SpawnTypes.DROPPED_ITEM)) { // Mining
-                            if(!mining) {
-                                filterSpawnEvent(event);
-                            }
                         }
-
                     });
 
                 } else {
@@ -169,6 +165,10 @@ public class NoExp {
                     if(!smelting) {
                         filterSpawnEvent(event);
                     }
+                }
+            } else if (causeRoot instanceof BlockSnapshot) { // Mining
+                if (!mining) {
+                    filterSpawnEvent(event);
                 }
             }
         }
