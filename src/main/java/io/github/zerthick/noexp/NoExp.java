@@ -197,59 +197,6 @@ public class NoExp {
             }
 
         }
-
-//        if (hasExpOrb) {
-//
-//            Object causeRoot = event.getCause().root();
-//
-//            if (causeRoot instanceof Entity) { // ExpBottle, Fishing
-//                Entity entity = (Entity) causeRoot;
-//                if (entity.getType().equals(EntityTypes.THROWN_EXP_BOTTLE)) { // ExpBottle
-//                    if (!expBottle) {
-//                        filterSpawnEvent(event);
-//                    }
-//                } else if (entity.getType().equals(EntityTypes.PLAYER)) {
-//                    EventContext eventContext = event.getContext();
-//
-//                    eventContext.get(EventContextKeys.SPAWN_TYPE).ifPresent(spawnType -> {
-//
-//                        if (spawnType.equals(SpawnTypes.PLACEMENT)) { // Fishing
-//                            eventContext.get(EventContextKeys.USED_ITEM).ifPresent(itemStackSnapshot -> {
-//
-//                                if (itemStackSnapshot.getType().equals(ItemTypes.FISHING_ROD)) {
-//                                    if (!fishing) {
-//                                        filterSpawnEvent(event);
-//                                    }
-//                                }
-//
-//                            });
-//                        }
-//                    });
-//
-//                } else {
-//
-//                    boolean entityFlag = entityMap.getOrDefault(entity.getType().getId(), true);
-//
-//                    if (!entityFlag) { // Entities Death % Breeding
-//                        filterSpawnEvent(event);
-//                    }
-//
-//                }
-//            } else if (causeRoot instanceof Inventory) { // Smelting
-//                Inventory inventory = (Inventory) causeRoot;
-//
-//                if (inventory.getArchetype().equals(InventoryArchetypes.FURNACE)) {
-//                    if (!smelting) {
-//                        filterSpawnEvent(event);
-//                    }
-//                }
-//            } else if (causeRoot instanceof BlockSnapshot) { // Mining
-//                if (!mining) {
-//                    filterSpawnEvent(event);
-//                }
-//            }
-//        }
-
     }
 
     private Optional<ConfigurationNode> loadConfig() {
